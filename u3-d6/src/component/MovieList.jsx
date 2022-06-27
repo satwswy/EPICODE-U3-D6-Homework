@@ -10,7 +10,7 @@ export default class MovieList extends Component {
   }
   fetchMovies = async () => {
     try {
-      let response = await fetch('http://www.omdbapi.com/?apikey=24ad60e9&s=Batman')
+      let response = await fetch('http://www.omdbapi.com/?apikey=1116749d&s=Batman')
       let data = await response.json()
       this.setState({ movies: data.Search })
       console.log(data.Search)
@@ -24,7 +24,10 @@ export default class MovieList extends Component {
       <>
         {this.state.movies ? (
           this.state.movies.map((element)=>(<Card key={element.imdbID}>
-            <Card.Img
+            <Card.Img 
+            onClick={(e)=>{
+              this.props.changeState(element.imdbID)
+            }}
               variant="top"
               src={element.Poster}
             />
