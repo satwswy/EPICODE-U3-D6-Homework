@@ -2,6 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Component } from "react";
 import {Container, Row, Col} from "react-bootstrap"
+import MovieList from "./component/MovieList";
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
       <Container>
           <Row className="justify-content-center mt-3 mb-2">
             <Col md={6}>
-              
+              <MovieList />
             </Col>
           </Row>
        </Container>   
