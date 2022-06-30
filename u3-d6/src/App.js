@@ -1,33 +1,25 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Component } from "react";
-import {Container, Row, Col} from "react-bootstrap"
-import MovieList from "./component/MovieList";
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import WarningSign from './components/WarningSign';
+import MyBadge from './components/MyBadge';
+import SingleBook from './components/SingleBook';
+import BookList from './components/BookList';
+import fantasyBooks from './fantasyBooks.json'
 
-class App extends Component {
-  state = {
-    movies: null
-  }
-  
-  changeState = (data) => {
-    this.setState({
-      movies: data
-    })
-  }
 
-  render() {
-    return (
+
+function App() {
+  return (
     <div className="App">
-      <Container>
-          <Row className="justify-content-center mt-3 mb-2">
-            <Col md={6}>
-              <MovieList changeState = {this.changeState}/>
-            </Col>
-          </Row>
-       </Container>   
+      <header className='App=header'>
+        {/* <WarningSign text="Watch out!"/>
+        <MyBadge text="NEW!" color="info"/> */}
+        {/* <SingleBook book={fantasyBooks[0]}/> */}
+        <BookList books={fantasyBooks} />
+
+      </header>
     </div>
-    );
-  }
+  );
 }
 
 export default App;
